@@ -5,12 +5,13 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import profilPic from "../../public/images/profile/3-Photo_Pro-zoomed.jpg";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
+import Skils from "@/components/Skils";
 
 const AnimatedNumber = ({ value }) => {
   const ref = useRef(null);
   const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, { duration: 3000 });
-  const isInView = useInView(ref);
+  const springValue = useSpring(motionValue, { duration: 2000 });
+  const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
     if (isInView) {
@@ -98,6 +99,7 @@ const about = () => {
               </div>
             </div>
           </div>
+          <Skils />
         </Layout>
       </main>
     </>
