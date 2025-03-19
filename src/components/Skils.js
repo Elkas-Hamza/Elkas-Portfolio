@@ -6,10 +6,10 @@ const Skill = ({ name, x, y }) => {
     <motion.div
       className=" cursor-pointer flex items-center justify-center rounded-full font-semibold bg-dark text-light py-3 px-6 shadow-dark absolute "
       whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
       initial={{ x: 0, y: 0 }}
-      animate={{ x: x, y: y }}
-      transition={{ duration: 1 }}
+      whileInView={{ x: x, y: y }}
+      transition={{ duration: 1.5 }}
+      viewport={{ once: true }}
     >
       {name}
     </motion.div>
@@ -23,7 +23,6 @@ const Skils = () => {
         <motion.div
           className=" cursor-pointer flex items-center justify-center rounded-full font-semibold bg-dark text-light p-8 shadow-dark"
           whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
         >
           Web
         </motion.div>

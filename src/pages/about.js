@@ -6,6 +6,7 @@ import Image from "next/image";
 import profilPic from "../../public/images/profile/3-Photo_Pro-zoomed.jpg";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 import Skils from "@/components/Skils";
+import Experiance from "@/components/Experiance";
 
 const AnimatedNumber = ({ value }) => {
   const ref = useRef(null);
@@ -100,6 +101,7 @@ const about = () => {
             </div>
           </div>
           <Skils />
+          {/* <Experiance/> */}
         </Layout>
       </main>
     </>
