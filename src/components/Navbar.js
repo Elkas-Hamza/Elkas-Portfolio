@@ -38,7 +38,7 @@ const Navbar = () => {
         </div>
         <nav className="flex items-center">
           <motion.a
-            href="/"
+            href="https://linkedin.com/in/hamza-el-kasmi"
             target={"_blank"}
             whileHover={{
               scale: 1.2,
@@ -51,7 +51,7 @@ const Navbar = () => {
             <LinkedInIcon />
           </motion.a>
           <motion.a
-            href="/"
+            href="https://x.com/Elkas_hamza"
             target={"_blank"}
             whileHover={{
               scale: 1.2,
@@ -64,7 +64,7 @@ const Navbar = () => {
             <TwitterIcon />
           </motion.a>
           <motion.a
-            href="/"
+            href="https://github.com/Elkas-Hamza"
             target={"_blank"}
             whileHover={{
               scale: 1.2,
