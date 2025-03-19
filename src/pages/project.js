@@ -43,9 +43,7 @@ const project = () => {
           <AnimatedText text="Innovation Drives Creation!" />
 
           <div className="grid grid-cols-12 gap-24">
-            <div className="col-span-12">
-              <FeaturedProject />
-            </div>
+            <div className="col-span-12">{/* <FeaturedProject /> */}</div>
             <div className="col-span-6">Project 1</div>
             <div className="col-span-6">Project 2</div>
           </div>
