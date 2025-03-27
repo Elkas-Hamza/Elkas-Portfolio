@@ -38,7 +38,7 @@ const Navbar = () => {
         </div>
         <nav className="flex items-center">
           <motion.a
-            href="https://linkedin.com/in/hamza-el-kasmi"
+            href="https://linkedin.com/in/elkas-hamza/"
             target={"_blank"}
             whileHover={{
               scale: 1.2,

@@ -6,25 +6,25 @@ import React from "react";
 
 const FeaturedProject = ({ type, title, summary, img, link, github }) => {
   return (
-    <article className="col-span-12">
+    <article className="w-full felx items-center justify-between rounded-3xl border border-dark bg-light shadow-2xl p-15">
       Featured project
-      <Link href={link} target="_blank">
+      <Link
+        href={link}
+        target="_blank"
+        className="w-1/2 cursor-pointer overflow-hidden rounded-lg"
+      >
         <Image src={img} alt={title} className="w-full h-auto" />
       </Link>
-      <div>
-        <span>{type}</span>
-        <Link href={link} target="_blank">
-          <h2>{title}</h2>
+      <div className="w-1/2 flex flex-col items-start justify-between pl-4">
+        <span className="text-primary font-medium text-xl">{type}</span>
+        <Link
+          href={link}
+          target="_blank"
+          className="hover:underline underline-offset-1"
+        >
+          <h2 className="my-2 w-full text-left text-4xl font-bold">{title}</h2>
         </Link>
-        <p>{summary}</p>
-        <div>
-          <Link href={github} target="_blank">
-            <GithubIcon />
-          </Link>
-          <Link href={link} target="_blank">
-            Visit Project
-          </Link>
-        </div>
+        Visit Project
       </div>
     </article>
   );
