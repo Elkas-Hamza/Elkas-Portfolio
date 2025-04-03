@@ -1,24 +1,41 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+name: CI
 
-name: setup-node
-description: "Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧"
-runs:
-  using: "composite"
-  steps:
-    - name: Setup Node.js ⚙️
-      uses: actions/setup-node@v4
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
       with:
-        node-version: 20
+        node-version: '18'
 
-    - name: Cache dependencies ⚡
-      id: cache_dependencies
-      uses: actions/cache@v3
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run build
+      run: npm run build
+
+    - name: Run tests
+      run: npm test
+
+    - name: Run lint
+      run: npm run lint
+
+    - name: Upload production-ready build artifacts
+      if: success()
+      uses: actions/upload-artifact@v2
       with:
-        path: node_modules
-        key: node-modules-${{ hashFiles('package-lock.json') }}
-
-    - name: Install dependencies 🔧
-      shell: bash
-      if: steps.cache_dependencies.outputs.cache-hit != 'true'
-      run: npm ci
+        name: nextjs-build
+        path: .next
